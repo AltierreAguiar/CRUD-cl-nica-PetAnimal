@@ -1,12 +1,16 @@
 package Animal;
 
 public class Animal {
-    protected String nome;
-    protected int idade;
+    private String nome;
+    private int idade;
+    private int id;
+
+    private static int idIncremental = 1;
 
     public Animal(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
+        this.id = idIncremental++;
     }
 
     public String getNome() {
@@ -25,6 +29,10 @@ public class Animal {
         this.idade = idade;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void emitirSom(){
         System.out.println("Emitindo som...");
     }
@@ -33,4 +41,6 @@ public class Animal {
     public String toString(){
         return "Nome: " + nome + "|Idadade: " + idade;
     }
+
+
 }

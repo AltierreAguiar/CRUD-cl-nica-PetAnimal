@@ -26,7 +26,6 @@ public class Cachorro extends Animal{
     }
     @Override
     public String toString(){
-        super.toString();
-        return "|Especie: " + especie;
+        return super.toString() + "|Especie: " + especie;
     }
 }

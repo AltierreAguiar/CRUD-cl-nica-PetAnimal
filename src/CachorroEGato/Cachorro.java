@@ -1,7 +1,7 @@
 package CachorroEGato;
 
 import Animal.Animal;
-
+//classe pai
 public class Cachorro extends Animal{
     private String especie;
 

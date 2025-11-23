@@ -26,6 +26,6 @@ public class Gato extends Animal {
     }
     @Override
     public String toString(){
-        return super.toString();
+        return super.toString() +  "|Especie: " + especie;
     }
 }

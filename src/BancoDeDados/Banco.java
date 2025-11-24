@@ -21,26 +21,21 @@ public class Banco {
     }
 
     //Para buscar por ID
-    //Tem que ser um metodo static referenciando animal
     public static Animal buscarAnimalPorID(int id){
-        //Primeiro tem que passar pela lista cadastrada
+        //Percorre a lista cadastrada
         for (Animal animal : listaAnimal){
             if(animal.getId() == id){
-                System.out.println(animal);
-            } else {
-                System.out.println("Animal não encontrado!");
+                // Retorna o animal encontrado
+                return animal;
             }
         }
+        // Se sair do loop sem encontrar, retorna null
         return null;
     }
 
-    //Para editar um novo animal
+    // Para editar um novo animal
     public static boolean editarAnimal(String novoNome, int novaIdade, int idEdicao){
-        /*Tem-se que criar uma "instanciação local" que se referencia ao
-        metodo buscarAnimalPorID*/
-
-        Animal animalEditado = buscarAnimalPorID(idEdicao);//Ele pega como parâmetro a variável local idEdicao
-
+        Animal animalEditado = buscarAnimalPorID(idEdicao);
 
         if(animalEditado != null){
             animalEditado.setNome(novoNome);
@@ -48,28 +43,23 @@ public class Banco {
             System.out.println("Animal editado com sucesso!");
             return true;
         }
-        System.out.println("Animal não encontrado!");
+        System.out.println("Animal não encontrado para edição!"); // Mensagem mais clara
         return false;
     }
 
+    // Para excluir um animal
     public static boolean excluirAnimal(int id){
-        //Basicamente o mesmo do de cima
         Animal exclusao = buscarAnimalPorID(id);
 
         if(exclusao != null){
-            //Aqui vai remover da lista
             listaAnimal.remove(exclusao);
             System.out.println("Animal com o ID " + id + " removido com sucesso!");
             return true;
-        }else {
-            System.out.println("Erro na remoção");
+        } else { // Adicione o else aqui para evitar que a mensagem seja mostrada se a busca retornar null
+            System.out.println("Animal não encontrado para remoção.");
             return false;
         }
     }
-
-
-
-
 
 
 }

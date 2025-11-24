@@ -3,20 +3,14 @@ package CachorroEGato;
 import Animal.Animal;
 
 public class Gato extends Animal {
-    private String especie;
+    // Removido: private String especie;
 
-    public Gato(String nome, int idade, String especie) {
+    public Gato(String nome, int idade) {
         super(nome, idade);
-        this.especie = especie;
+        // Removido: this.especie = especie;
     }
 
-    public String getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
+    // Removido: getters/setters para especie
 
     @Override
     public void emitirSom() {
@@ -24,8 +18,10 @@ public class Gato extends Animal {
         System.out.println("Miando....");
         System.out.println("Miau, miau");
     }
+
     @Override
     public String toString(){
-        return super.toString() +  "|Especie: " + especie;
+        // Remove 'especie' do toString
+        return "Gato | " + super.toString();
     }
 }

@@ -1,22 +1,16 @@
 package CachorroEGato;
 
 import Animal.Animal;
-//classe pai
+
 public class Cachorro extends Animal{
-    private String especie;
+    // Removido: private String especie;
 
-    public Cachorro(String nome, int idade, String especie) {
+    public Cachorro(String nome, int idade) {
         super(nome, idade);
-        this.especie = especie;
+        // Removido: this.especie = especie;
     }
 
-    public String getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
+    // Removido: getters/setters para especie
 
     @Override
     public void emitirSom(){
@@ -24,8 +18,10 @@ public class Cachorro extends Animal{
         System.out.println("Latindo... ");
         System.out.println("AU, AU, AU");
     }
+
     @Override
     public String toString(){
-        return super.toString() + "|Especie: " + especie;
+        // Remove 'especie' do toString
+        return "Cachorro | " + super.toString();
     }
 }

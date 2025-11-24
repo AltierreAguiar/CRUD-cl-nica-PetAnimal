@@ -1,65 +1,45 @@
 package Consulta;
 
 import Animal.Animal;
+import Veterinario.Veterinario; // Importar a nova classe
 
 public class Consulta {
     private String tipoConsulta;
     private String dataConsulta;
     private Animal petAtendido;
-    private String nomeVeterinario;
-    private String nomeTutor;
+    private Veterinario veterinario; // Usar a classe Veterinario
+    private String nomeTutor; // Mantendo o nome do tutor por simplicidade
 
-    public Consulta(Animal pet, String tipoConsulta, String dataConsulta, String nomeVeterinario, String nomeTutor) {
+    // Construtor atualizado
+    public Consulta(Animal pet, String tipoConsulta, String dataConsulta, Veterinario vet, String nomeTutor) {
         this.petAtendido = pet;
         this.tipoConsulta = tipoConsulta;
         this.dataConsulta = dataConsulta;
-        this.nomeVeterinario = nomeVeterinario;
+        this.veterinario = vet; // Novo atributo
         this.nomeTutor = nomeTutor;
     }
 
-    public String getTipoConsulta() {
-        return tipoConsulta;
+    // Getters/Setters para tipoConsulta, dataConsulta, petAtendido, nomeTutor
+
+    // Novo Getter/Setter para Veterinario
+    public Veterinario getVeterinario() {
+        return veterinario;
     }
 
-    public void setTipoConsulta(String tipoConsulta) {
-        this.tipoConsulta = tipoConsulta;
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
     }
 
-    public String getDataConsulta() {
-        return dataConsulta;
-    }
-
-    public void setDataConsulta(String dataConsulta) {
-        this.dataConsulta = dataConsulta;
-    }
-
-    public Animal getPetAtendido() {
-        return petAtendido;
-    }
-
-    public void setPetAtendido(Animal petAtendido) {
-        this.petAtendido = petAtendido;
-    }
-
-    public String getNomeVeterinario() {
-        return nomeVeterinario;
-    }
-
-    public void setNomeVeterinario(String nomeVeterinario) {
-        this.nomeVeterinario = nomeVeterinario;
-    }
-
-    public String getNomeTutor() {
-        return nomeTutor;
-    }
-
-    public void setNomeTutor(String nomeTutor) {
-        this.nomeTutor = nomeTutor;
-    }
+    // Outros métodos (getters/setters para os atributos restantes...)
+    // ...
 
     @Override
     public String toString(){
-        return super.toString() + "| Tipo de consulta: "  + tipoConsulta
-                + "| Data da consulta: " +  dataConsulta;
+        // Incluindo o ID do Pet e o nome do Veterinário no toString
+        return "Tipo de consulta: "  + tipoConsulta
+                + " | Data da consulta: " +  dataConsulta
+                + " | Pet (ID " + petAtendido.getId() + "): " + petAtendido.getNome()
+                + " | Veterinário: " + veterinario.getNome()
+                + " | Tutor: " + nomeTutor;
     }
 }

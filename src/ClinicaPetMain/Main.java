@@ -14,8 +14,8 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     // Lista de Veterinários para simular um cadastro fixo
-    private static final Veterinario vet1 = new Veterinario("Dr. Ricardo Santos", "CRMV/SP-1234", "Clínico Geral");
-    private static final Veterinario vet2 = new Veterinario("Dra. Ana Maria", "CRMV/RJ-5678", "Cirurgiã");
+    private static final Veterinario vet1 = new Veterinario("Dr. Ricardo Santos", "1234", "Clínico Geral");
+    private static final Veterinario vet2 = new Veterinario("Dra. Ana Maria", "5678", "Cirurgiã");
 
     public static void main(String[] args) {
 
@@ -64,7 +64,7 @@ public class Main {
     }
 
     private static void exibirMenuPrincipal() {
-        System.out.println("\n--- 🏥 Clínica Pet Animal - Menu Principal 🏥 ---");
+        System.out.println("\n---  Clínica Pet Animal - Menu Principal  ---");
         System.out.println("1. Cadastrar Novo Animal (Create)");
         System.out.println("2. Listar Todos os Animais (Read)");
         System.out.println("3. Buscar Animal por ID");
@@ -119,6 +119,7 @@ public class Main {
             System.out.println("Nenhum animal cadastrado.");
             return;
         }
+        //For-each para passar pela lista cadrastrada
         for (Animal a : animais) {
             // Chama o toString correto de Cachorro ou Gato
             System.out.println("ID: " + a.getId() + " | " + a.toString());
@@ -151,7 +152,8 @@ public class Main {
             int idEdicao = Integer.parseInt(scanner.nextLine());
 
             // Verifica se o animal existe usando o método ajustado
-            Animal animalParaEditar = Banco.buscarAnimalPorID(idEdicao);
+
+            Animal animalParaEditar = Banco.buscarAnimalPorID(idEdicao);//vai pegar o método lá classe banco
 
             if (animalParaEditar == null) {
                 System.out.println("Animal com ID " + idEdicao + " não encontrado para edição.");

@@ -14,13 +14,14 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     // Lista de Veterinários para simular um cadastro fixo
-    private static final Veterinario vet1 = new Veterinario("Dr. Ricardo Santos", "1234", "Clínico Geral");
-    private static final Veterinario vet2 = new Veterinario("Dra. Ana Maria", "5678", "Cirurgiã");
+    private static final Veterinario vet1 = new Veterinario("Dr. Ricardo Santos",
+                                                            "1234", "Clínico Geral");
+
+    private static final Veterinario vet2 = new Veterinario("Dra. Ana Maria",
+                                                            "5678", "Cirurgiã");
 
     public static void main(String[] args) {
-
         int opcao = -1;
-
         // Loop principal do menu
         do {
             exibirMenuPrincipal();
